@@ -15,8 +15,8 @@ const font = Poppins({
 })
 
 export const Navbar = () => {
-    return (  
-        <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16"> 
+    return (
+        <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16">
             <div className="flex items-center">
                 <MobileSidebar />
                 <Link href="/">
@@ -34,7 +34,7 @@ export const Navbar = () => {
                     <Sparkles className="h-4 w-4 fill-white text-white ml-2"/>
                 </Button>
                 <ModeToggle />
-                <UserButton />
+                <UserButton afterSignOutUrl="/" />
             </div>
         </div>
     );
