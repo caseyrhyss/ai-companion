@@ -34,22 +34,22 @@ export const ChatMessages = ({
 
     return (
         <div className="flex-1 overflow-y-auto pr-4">
-            <ChatMessage 
+            <ChatMessage
                 isLoading={fakeLoading}
                 src={companion.src}
                 role="system"
                 content={`Hello, I am ${companion.name}, ${companion.description}`}
             />
             {messages.map((message) => (
-                <ChatMessage 
+                <ChatMessage
                     key={message.content}
                     role={message.role}
                     content={message.content}
-                    src={message.src}
+                    src={companion.src}
                 />
             ))}
             {isLoading && (
-                <ChatMessage 
+                <ChatMessage
                     role="system"
                     src={companion.src}
                     isLoading
