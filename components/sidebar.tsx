@@ -2,7 +2,7 @@
 
 import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
-import { Home, Plus, Settings } from "lucide-react";
+import { Home, Plus, Settings, Users2 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
 interface SidebarPro {
@@ -21,6 +21,12 @@ export const Sidebar = ({
             icon: Home, 
             href: "/",
             label: "Home",
+            pro: false,
+        }, 
+        {
+            icon: Users2, 
+            href: "/companions-list",
+            label: "Companions",
             pro: false,
         }, 
         {
