@@ -95,35 +95,35 @@ export async function POST(
     model.verbose = true;
 
     const resp = String(
-    //   await model
-    //     .call(
-    //       `
-    //     ONLY generate plain sentences without prefix of who is speaking. DO NOT use ${companion.name}: prefix.
-
-    //     ${companion.instructions}
-
-    //     Below are relevant details about ${companion.name}'s past and the conversation you are in.
-    //     ${relevantHistory}
-
-
-    //     ${recentChatHistory}\n${companion.name}:`
-    //     )
-    //     .catch(console.error)
-        await model
+      await model
         .call(
-        `
-            ONLY generate plain sentences in HILIGAYNON without prefix of who is speaking.
+          `
+        ONLY generate plain sentences in Hiligaynon without prefix of who is speaking. DO NOT use ${companion.name}: prefix.
 
-            ${companion.instructions}
+        ${companion.instructions}
 
-            Below are relevant details about ${companion.name}'s past and the conversation you are in.
-            ${relevantHistory}
+        Below are relevant details about ${companion.name}'s past and the conversation you are in.
+        ${relevantHistory}
 
 
-            ${recentChatHistory}\n${companion.name}:
-        `
+        ${recentChatHistory}\n${companion.name}:`
         )
         .catch(console.error)
+        // await model
+        // .call(
+        // `
+        //     Mag-obra lamang sang simple nga mga panumbungon sa HILIGAYNON nga wala sing prefix ni ${companion.name}.
+
+        //     ${companion.instructions}
+
+        //     Sa idalom amo ang mga may kaangtanan nga detalye parte sa nahauna nga eksperyensya ni ${companion.name} kag ang pagbinalaybay nga gina-istoryahan ninyo.
+        //     ${relevantHistory}
+
+
+        //     ${recentChatHistory}\n${companion.name}:
+        // `
+        // )
+        // .catch(console.error)
     );
 
     const cleaned = resp.replaceAll(",", "");
