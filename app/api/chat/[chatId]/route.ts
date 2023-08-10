@@ -98,7 +98,8 @@ export async function POST(
       await model
         .call(
           `
-        ONLY generate plain sentences in Hiligaynon without prefix of who is speaking. DO NOT use ${companion.name}: prefix.
+        ONLY generate plain sentences without prefix of who is speaking. DO NOT use ${companion.name}: prefix. 
+        After generating plain sentences, TRANSLATE IT INTO HILIGAYNON ONLY. DON'T RESPOND IN ENGLISH.
 
         ${companion.instructions}
 
